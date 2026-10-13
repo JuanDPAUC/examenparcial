@@ -17,9 +17,7 @@ const toggleDrawer = () => {
 }
 const items = [
   {label: 'option.home', to: '/home'},
-  {label: 'option.about', to: '/about'},
-  {label: 'option.categories', to: '/publishing/categories'},
-  {label: 'option.tutorials', to: '/publishing/tutorials'}
+  {label: 'option.new-vehicle-inventory', to: '/vehicle/items/new'},
 ];
 </script>
 
@@ -38,8 +36,6 @@ const items = [
             <router-link :to="item.to" :class="slotProps['class']">{{ t(item.label) }}</router-link>
           </pv-button>
         </div>
-        <!-- To add when IAM is implemented -->
-        <!--<authentication-section/>-->
         <language-switcher/>
       </template>
     </pv-toolbar>
