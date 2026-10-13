@@ -17,7 +17,7 @@ export class ShowroomApi extends BaseApi {
     getSections() {
         return this.#sectionsEndpoint.getAll();
     }
-    getVehiclesInventoryItemEndpoint() {
+    getVehiclesInventoryItem() {
         return this.#vehiclesInventoryItemEndpoint.getAll();
     }
     createVehicleInventoryItem(resource) {

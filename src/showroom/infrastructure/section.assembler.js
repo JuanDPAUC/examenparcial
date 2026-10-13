@@ -2,10 +2,10 @@ import {Section} from "../domain/model/section.entity.js";
 
 
 export class SectionAssembler {
-    toEntityFromResource(resource) {
+    static toEntityFromResource(resource) {
         return new Section({...resource});
     }
-    toEntitiesFromResponse(response) {
+    static toEntitiesFromResponse(response) {
         if (response.status !== 200) {
             console.error(`${response.status}, ${response.statusText}`);
             return [];
