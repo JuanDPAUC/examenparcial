@@ -1,14 +1,29 @@
 <script setup>
 
 import LanguageSwitcher from "./language-switcher.vue";
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import {useI18n} from "vue-i18n";
 import FooterContent from "./footer-content.vue";
+import router from "../../../router.js";
+import {useRouter} from "vue-router";
 // To import when IAM is implemented:
 // import AuthenticationSection from "../../../iam/presentation/components/authentication-section.vue";
 const { t } = useI18n();
+const router = useRouter();
+
 
 const drawer = ref(false);
+const drawerVisible = ref(false);
+
+
+const logoUrl = computed(() => {
+  const base = import.meta.env.VITE_LOGO_API_URL;
+  const domain = import.meta.env.VITE_LOGO_DOMAIN;
+  const token = import.meta.env.VITE_LOGO_API_TOKEN;
+  if (!base || !domain) return '';
+  return token ? `${base}/${domain}?token=${token}` : `${base}/${domain}`;
+});
+
 const toggleDrawer = () => {
   /**
    * Toggles the state of the drawer between open and closed.
@@ -19,6 +34,11 @@ const items = [
   {label: 'option.home', to: '/home'},
   {label: 'option.new-vehicle-inventory', to: '/vehicle/items/new'},
 ];
+
+const navigateTo = (target) => {
+  router.push(target);
+  drawerVisible.value = false;
+};
 </script>
 
 <template>

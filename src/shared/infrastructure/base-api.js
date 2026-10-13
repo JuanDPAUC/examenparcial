@@ -2,7 +2,7 @@ import axios from "axios";
 
 // import {iamInterceptor} from "../../iam/infrastructure/iam.interceptor.js";
 
-const platformApi = import.meta.env.VITE_LEARNING_PLATFORM_API_URL;
+const platformApi = import.meta.env.VITE_MANAGEMENT_PLATFORM_API_URL;
 
 /**
  * Shared infrastructure base class that configures the HTTP client.

@@ -36,6 +36,11 @@ const useShowroomStore = defineStore('showroom', () => {
             errors.value.push(error);
         });
     }
+
+    function fetchData() {
+        return Promise.all([fetchSections(), fetchVehiclesInventoryItems()]);
+    }
+
     function getSectionByVehicleInventoryItem(vehicleInventoryItem) {
         return sections.value.filter((item) => item.id !== vehicleInventoryItem.id);
     }
@@ -61,6 +66,7 @@ const useShowroomStore = defineStore('showroom', () => {
         sectionsCount,
         sectionsLoaded,
         vehiclesInventoryItemLoaded,
+        fetchData,
         fetchSections,
         fetchVehiclesInventoryItems,
         addVehicleInventoryItem,

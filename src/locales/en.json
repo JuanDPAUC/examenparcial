@@ -1,0 +1,16 @@
+{
+  "option": {
+    "home": "Home",
+    "new-historical-object-item": "Nuevo Objeto Histórico",
+    "menu": "Menú"
+  },
+  "toolbar": {
+    "description": "La ANA ayuda a las personas a descubrir y explorar el mundo del dinero a través de su vasta oferta de programas educativos, incluyendo su museo, biblioteca, convenciones, seminarios, publicaciones y programas de divulgación."
+  },
+  "home": {
+    "title": "Inicio",
+    "content": "Museo Edward C Rochette.",
+    "collections": "Colecciones",
+    "historical-collections": "Colecciones Históricas"
+  }
+}
